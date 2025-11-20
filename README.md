@@ -1,7 +1,7 @@
 # Project: Dockerizing a fullstack app (frontend+backend) with Postgres, Redis and Nginx
 
-This project was basically from solutions to exercise of course https://devopswithdocker.com/. A frontend app which built on React, which accept request on port 5000. A backend app built on Go language, which accepts connections on port 8080. A SQL database server 'postgresql' and in-memory database 'redis' is connected to the backend server.
-Nginx will function as a reverse proxy. The requests arriving at anything other than /api will be redirected to frontend container and /api will get redirected to backend container. At the end the frontend is accessible simply by going to http://localhost.
+This project was basically from solutions to exercise of course https://devopswithdocker.com/. A frontend app which built on React, which accept request on port 9210. A backend app built on Go language, which accepts connections on port 9211. A SQL database server 'postgresql' and in-memory database 'redis' is connected to the backend server.
+Nginx will function as a reverse proxy on port 9212. The requests arriving at anything other than /api will be redirected to frontend container and /api will get redirected to backend container. At the end the frontend is accessible simply by going to http://localhost:9212.
 See the project diagram for understanding the app architecture.
 
 ## Steps for Running
@@ -19,7 +19,7 @@ See the project diagram for understanding the app architecture.
   $ docker-compose down
   ```
 
-- Go to http://localhost
+- Go to http://localhost:9212
 
 ## Features
 
@@ -35,8 +35,8 @@ See the project diagram for understanding the app architecture.
 
 ## Exercise done on this project
 
-- Ex-1.12: Create a Dockerfile for _Frontend_ and listens on port 5000
-- Ex-1.13: Create a Dockerfile for _Backend_ and listens on port 8080
+- Ex-1.12: Create a Dockerfile for _Frontend_ and listens on port 9210
+- Ex-1.13: Create a Dockerfile for _Backend_ and listens on port 9211
 - Ex-1.14: Exposed ports for frontend and backend correctly and frontend gets response from backend api when talk to browser
 - Ex-2.3: Configure the backend and frontend to work in docker-compose.
 - Ex-2.4: Using Docker Networking, redis is connected to the backend as docker container

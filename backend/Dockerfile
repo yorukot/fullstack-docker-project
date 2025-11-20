@@ -11,7 +11,7 @@ RUN go build && \
 
 FROM scratch
 
-EXPOSE 8080
+EXPOSE 9211
 
 WORKDIR /usr/src/app
 

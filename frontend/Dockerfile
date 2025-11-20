@@ -10,7 +10,7 @@ RUN npm install -g serve && \
 
 FROM node:14-alpine3.13
 
-EXPOSE 5000
+EXPOSE 9210
 
 WORKDIR /usr/src/app
 
@@ -22,5 +22,4 @@ RUN npm install -g serve && \
 
 USER appuser
 
-ENTRYPOINT [ "serve", "-s", "-l", "5000", "build" ]
-
+ENTRYPOINT [ "serve", "-s", "-l", "9210", "build" ]
