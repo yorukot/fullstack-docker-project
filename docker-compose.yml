@@ -47,11 +47,14 @@ services:
     image: nginx:1.19-alpine
     restart: unless-stopped
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 9212:9212
     environment:
       - NGINX_PORT=9212
+    depends_on:
+      - frontend_server
+      - backend_server
 
 volumes:
   database:
