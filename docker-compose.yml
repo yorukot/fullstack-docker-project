@@ -44,14 +44,11 @@ services:
       - database:/var/lib/postgresql/data
 
   reverse_proxy:
-    image: nginx:1.19-alpine
+    image: reverse_proxy
+    build: ./nginx
     restart: unless-stopped
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 9212:9212
-    environment:
-      - NGINX_PORT=9212
     depends_on:
       - frontend_server
       - backend_server
